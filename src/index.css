@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#fiction-hero{
+    background-image: url(./assets/fiction-bg.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#non-fiction-hero{
+    background-image: url(./assets/non-fiction-bg.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+.wrapper a:hover{
+    color: 	#2BE653;
+}
+.product-card:hover{
+    color: 	#2BE653;
+}
+
+
+.page-height{
+    height: 100%;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#synopsis-block p + p{
+    margin-top: 1rem;
+}
+/* 
+#synopsis-block::after{
+    content: '';
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180, white, black);
+} */
