@@ -1,16 +1,12 @@
-import {useState, useEffect} from 'react'
-import { useOutletContext } from 'react-router-dom';
-// import '../scss/dist/styles.css'
+import {useState, useEffect, useContext} from 'react'
 import CheckoutSummary from '../components/CheckoutPage/CheckoutSummary';
 import CheckoutItems from '../components/CheckoutPage/CheckoutItems';
+import { CartContext } from '../contexts/CartContext';
 
 
 function Checkout() {
-
+    const {basket} = useContext(CartContext)
     const [basketTotalPrice, setBasketTotalPrice] = useState(0)
-
-    const [, basket, setBasket] = useOutletContext()
-    // console.log(cartItems)
 
     useEffect(() => {
         /* 
@@ -21,7 +17,6 @@ function Checkout() {
         let filteredItemsAboveZero = basket.items.filter(item => item.qty > 0);
         console.log(filteredItemsAboveZero);
         setBasketTotalPrice(filteredItemsAboveZero.reduce((prev, current) => prev + current.price * current.qty, 0))
-        console.log(basket);
     }, [basket])
 
     return ( 
@@ -29,7 +24,7 @@ function Checkout() {
             <h1 id="checkout-page-title" className="py-10 text-2xl text-center">Checkout</h1>
 
             <div className="checkout-page__container">
-                <CheckoutItems basket={basket} setBasket={setBasket} />
+                <CheckoutItems />
                 <CheckoutSummary basketTotalPrice={basketTotalPrice} />
             </div>
         </div>

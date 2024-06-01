@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import RootLayout from "../../RootLayout";
+import { CartContext } from "../../contexts/CartContext";
 
-function RenderCartItems({basket, setBasket}) {
+function RenderCartItems() {
+    const {basket, setBasket} = useContext(CartContext)
 
     const [isShown, setShown] = useState('block');
 
@@ -61,8 +63,6 @@ function RenderCartItems({basket, setBasket}) {
                             type="number" 
                             className='border border-black w-[40px] h-[40px] text-center text-2xl font-thin' 
                             value={item.qty}
-                            // value={value}
-                            // onChange={(e) => updateBasket(e)}
                             onChange={(e) => updateInputField(e, item.key)}
                             // onFocus={() => setShown('block')}
                         />

@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
 import ErrorPage from './pages/Error'
-// import './index.css'
 import './scss/styles.css'
 
 //layouts
@@ -15,22 +14,23 @@ import ViewAll from './pages/ViewAll'
 import Checkout from './pages/Checkout'
 import Collections from './pages/Collections'
 import ProductPage from './pages/ProductPage'
+import { CartProvider } from './contexts/CartContext'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
       <Route index element={ <Home /> } />
       <Route path='product' element={ <Product /> } />
-      {/* <Route path='view-all/:type/:id' element={ <ViewAll /> } /> */}
       <Route path='checkout' element={ <Checkout /> } />
       <Route path='collections' element={ <Collections /> } />
-      {/* <Route path='product-page' element={ <ProductPage /> } /> */}
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>,
 )

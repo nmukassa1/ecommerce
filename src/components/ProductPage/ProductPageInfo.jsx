@@ -13,11 +13,7 @@ function BookPageProductInfo({data}) {
             setSynopsisHidden('h-[90px]')
         }
     }
-
-    // const [addToCart] = useOutletContext()
-
     
-
     return ( 
         <div id="product-page-info">
             <div className="product-container">
@@ -36,7 +32,6 @@ function BookPageProductInfo({data}) {
                 {data.quantity > 0 ? (
                     <>
                         <AddToCartButton product={data} />
-                        {/* <button className="bg-black text-white px-3 py-2 hover:bg-white hover:text-black hover:border-black hover:border" onClick={addToCart}>Add To Cart</button>  */}
                     </>
                 ) : (
                     <button disabled className="bg-black text-white px-3 py-2">Out Of Stock</button>

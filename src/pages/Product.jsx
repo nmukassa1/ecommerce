@@ -26,8 +26,10 @@ function ProductPage() {
         <>
             {queryExist && (
                 <div id='product-page'>
-                    <ProductPageImage img={product.img} />
-                    <ProductPageInfo data={product} />
+                    <div className="product-page-container">
+                        <ProductPageImage img={product.img} />
+                        <ProductPageInfo data={product} />
+                    </div>
                 </div>
             )}
         </>
