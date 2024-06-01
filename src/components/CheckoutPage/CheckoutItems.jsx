@@ -1,9 +1,9 @@
 import RenderCartItems from "../Global/RenderCartItems";
 
-function CheckoutItems({basket, setBasket}) {
+function CheckoutItems() {
     return ( 
         <div id="checkout-items">
-             <RenderCartItems basket={basket} setBasket={setBasket} />
+             <RenderCartItems />
         </div>
      );
 }

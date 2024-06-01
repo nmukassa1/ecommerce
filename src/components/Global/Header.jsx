@@ -1,9 +1,11 @@
 import {Link} from 'react-router-dom'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import { CartContext } from '../../contexts/CartContext'
 
-function Header({basket, toggleCart}) {
+function Header() {
+    const {basket, toggleCart} = useContext(CartContext)
 
     return ( 
         <header className='flex items-center justify-center px-8 sticky top-0 bg-white w-screen z-50'>

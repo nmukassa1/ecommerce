@@ -9,12 +9,11 @@ function Collections() {
     const [queryExist, setQueryExist] = useState(false); // State to track if query exists
     const [title, setTitle] = useState();
 
-    //Query Oprions: Genre, Author, Type
+    //Query Options: Genre, Author, Type
     // E.g Fantasy, Jk Rowling, Fiction
     const genreQuery = searchParams.get('genre')
     const authorQuery = searchParams.get('author')
     const typeQuery = searchParams.get('type')
-
 
     useEffect(() => {
         //Filter catalog based on query

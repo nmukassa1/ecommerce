@@ -50,23 +50,32 @@ header{
     color: 	#2BE653;
 }
 
-#product-page{
-    display: grid;
-    width: 80%;
+.product-page-container{
     height: 660px;
+    width: 80%;
     border: 1px solid;
     border-radius: 10px;
     overflow: scroll;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    padding: 20px 0;
 
     @media(width > 700px){
-        height: 100%;
+        min-height: inherit;
         width: 100%;
         grid-template-columns: 1fr 1fr;
+        display: grid;
         border-radius: 0;
+        padding: 0;
+    }
+}
+
+#product-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+
+    @media(width > 700px){
+        display: block;
     }
 
     &-hero-img-container{
@@ -85,10 +94,9 @@ header{
     }
 
     &-info{
-        overflow: scroll;
-        height: 250px;
         padding-left: 2rem;
         padding-right: 2rem;
+        margin-top: 20px;
 
         @media(width > 700px){
             display: grid;
