@@ -13,7 +13,6 @@ import Product from './pages/Product'
 import ViewAll from './pages/ViewAll'
 import Checkout from './pages/Checkout'
 import Collections from './pages/Collections'
-import ProductPage from './pages/ProductPage'
 import { CartProvider } from './contexts/CartContext'
 
 const router = createBrowserRouter(
