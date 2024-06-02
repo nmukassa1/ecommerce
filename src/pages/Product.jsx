@@ -10,8 +10,8 @@ function ProductPage() {
     const [queryExist, setQueryExist] = useState(false); // State to store the product
     
     useEffect(() => {
-        const name = searchParams.get('name'); // Getting the 'name' parameter from URL
-        const product = catalog.books.filter((item) => {return item.title === name})
+        const name = searchParams.get('name').toLowerCase(); // Getting the 'name' parameter from URL
+        const product = catalog.books.filter((item) => {return item.title.toLowerCase() === name})
 
         if (product) {
             setProduct(product[0]);
